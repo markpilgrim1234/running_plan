@@ -16,7 +16,15 @@
     h3 { font-size: 1rem; margin-top: 1rem; }
   </style>
 </head>
-<body>
+
+  <script>
+    const password = "1234";
+    const userInput = prompt("Inserisci password per accedere alla pagina:");
+    if (userInput !== password) {
+      document.write("<h2 style='text-align:center; color: red;'>Accesso negato</h2>");
+      throw new Error("Accesso negato");
+    }
+  </script>
   <div class="section">
     <h2>Allenamenti</h2>
     <ul>
