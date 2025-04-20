@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piano Gara & Nutrizione - HM 1h45</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f2f2f2; margin: 0; padding: 20px; }
+    h1, h2, h3 { color: #333; }
+    .section { background: white; padding: 20px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    .highlight { background: #e8f5e9; padding: 10px; border-left: 5px solid #4caf50; margin-bottom: 15px; }
+    ul { padding-left: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Piano Gara & Nutrizione - HM 1h45</h1>
+
+  <div class="section">
+    <div class="highlight" id="next-session">
+      Caricamento prossima uscita...
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Calendario Allenamenti</h2>
+    <div>
+      <h3>Settimana 0 (14–20 Aprile)</h3>
+      <ul>
+        <li>Lun 14: Palestra busto (già fatta)</li>
+        <li>Mer 17: 8 km facile @ 5:30/km</li>
+        <li>Dom 20: 16 km tranquilli</li>
+      </ul>
+      <h3>Settimana 1 (21–27 Aprile)</h3>
+      <ul>
+        <li>Lun 21: Riposo</li>
+        <li>Mar 22: 4x2 km @ 4:50/km (rec. 2')</li>
+        <li>Gio 24: 10 km progressivo (5:20 → 4:50)</li>
+        <li>Dom 27: 20 km (ultimi 5 km a 5:00/km)</li>
+      </ul>
+      <h3>Settimana 2 (28 Apr - 4 Mag)</h3>
+      <ul>
+        <li>Lun 28: Riposo</li>
+        <li>Mar 29: 3x3 km @ 4:55/km (rec. 3')</li>
+        <li>Gio 1 Mag: 10 km rigenerante @ 5:30/km</li>
+        <li>Dom 4 Mag: 16 km (ultimi 5 km a ritmo gara)</li>
+      </ul>
+      <h3>Settimana 3 (5–11 Maggio)</h3>
+      <ul>
+        <li>Lun 5: Riposo o 3–4 km lenti</li>
+        <li>Mar 6: 3x1 km @ 5:00/km (rec. 90")</li>
+        <li>Gio 8: 6 km facile @ 5:30/km</li>
+        <li>Sab 10: Facoltativo 15' corsa + allunghi</li>
+        <li>Dom 11: GARA HM - Obiettivo 1h45 (5:00/km)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Strategia Nutrizionale per la Gara</h2>
+    <ul>
+      <li><strong>Prima della gara (-30min):</strong> 1/2 barretta (mandorle+miele), 200ml acqua</li>
+      <li><strong>Durante la gara:</strong>
+        <ul>
+          <li>Km 6–7: 1 SIS GO Isotonic Gel (22g CHO)</li>
+          <li>Km 13–14: 1 Maurten Gel 100 (25g CHO)</li>
+          <li>Km 18–20 (facoltativo): qualche sorso d'acqua</li>
+        </ul>
+      </li>
+      <li><strong>Totale CHO stimati:</strong> ~50g</li>
+    </ul>
+    <h3>Prodotti Consigliati</h3>
+    <ul>
+      <li><strong>Maurten Gel 100:</strong> Alta digeribilità, 25g CHO</li>
+      <li><strong>SIS GO Isotonic Gel:</strong> 22g CHO, senza acqua</li>
+    </ul>
+    <h3>Uso Gel negli Allenamenti</h3>
+    <ul>
+      <li>Dom 27 Apr: SIS @ km 6, Maurten @ km 13</li>
+      <li>Dom 4 Mag: solo Maurten</li>
+    </ul>
+    <h3>Barrette Energetiche</h3>
+    <ul>
+      <li>Ottime prima corsa o nei primi 8–10 km</li>
+      <li>Non ideali in fase finale o ritmo alto</li>
+    </ul>
+    <h3>Consigli Garmin Venu 2</h3>
+    <ul>
+      <li>Usa allenamenti strutturati con avvisi ritmo</li>
+      <li>Vibrazione: solo inizio/fine intervallo</li>
+      <li>Auto-lap ON, suoni OFF</li>
+    </ul>
+  </div>
+
+  <script>
+    const today = new Date();
+    const allenamenti = [
+      { date: '2024-04-17', desc: '8 km facile @ 5:30/km' },
+      { date: '2024-04-20', desc: '16 km tranquilli' },
+      { date: '2024-04-22', desc: '4x2 km @ 4:50/km (rec. 2')' },
+      { date: '2024-04-24', desc: '10 km progressivo (5:20 → 4:50)' },
+      { date: '2024-04-27', desc: '20 km (ultimi 5 km a 5:00/km)' },
+      { date: '2024-04-29', desc: '3x3 km @ 4:55/km (rec. 3')' },
+      { date: '2024-05-01', desc: '10 km rigenerante @ 5:30/km' },
+      { date: '2024-05-04', desc: '16 km (ultimi 5 km a ritmo gara)' },
+      { date: '2024-05-06', desc: '3x1 km @ 5:00/km (rec. 90")' },
+      { date: '2024-05-08', desc: '6 km facile @ 5:30/km' },
+      { date: '2024-05-10', desc: "Facoltativo 15' corsa + allunghi" },
+      { date: '2024-05-11', desc: 'GARA HM - Obiettivo 1h45 (5:00/km)' }
+    ];
+
+    function findNextSession() {
+      const now = today.toISOString().split('T')[0];
+      const next = allenamenti.find(a => a.date >= now);
+      const el = document.getElementById('next-session');
+      if (next) {
+        const data = new Date(next.date).toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long' });
+        el.innerHTML = `<strong>La prossima uscita:</strong> ${data} - ${next.desc}`;
+      } else {
+        el.innerHTML = '<strong>Gara completata!</strong> Complimenti!';
+      }
+    }
+
+    findNextSession();
+  </script>
+</body>
+</html>
