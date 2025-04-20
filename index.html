@@ -7,19 +7,12 @@
   <style>
     body { font-family: sans-serif; background: #fff; margin: 0; padding: 1rem; font-size: 1.1rem; color: #222; }
     .section { margin-bottom: 2rem; }
-    .highlight { background: #e0f7e9; padding: 1rem; border-left: 5px solid #2e7d32; font-weight: bold; }
     ul { padding-left: 1.2rem; margin: 0.5rem 0; }
     h2 { font-size: 1.2rem; margin-top: 2rem; }
     h3 { font-size: 1rem; margin-top: 1rem; }
   </style>
 </head>
 <body>
-  <div class="section">
-    <div class="highlight" id="next-session">
-      Caricamento prossima uscita...
-    </div>
-  </div>
-
   <div class="section">
     <h2>Allenamenti</h2>
     <ul>
@@ -48,38 +41,5 @@
     </ul>
     <h3>Totale CHO: ~50g</h3>
   </div>
-
-  <script>
-    const today = new Date();
-    const allenamenti = [
-      { date: '2025-04-17', desc: '8 km facile @ 5:30/km' },
-      { date: '2025-04-20', desc: '16 km tranquilli' },
-      { date: '2025-04-22', desc: '4x2 km @ 4:50/km (rec. 2')' },
-      { date: '2025-04-24', desc: '10 km progressivo (5:20 → 4:50)' },
-      { date: '2025-04-27', desc: '20 km (ultimi 5 km a 5:00/km)' },
-      { date: '2025-04-29', desc: '3x3 km @ 4:55/km (rec. 3')' },
-      { date: '2025-05-01', desc: '10 km rigenerante @ 5:30/km' },
-      { date: '2025-05-04', desc: '16 km (ultimi 5 km a ritmo gara)' },
-      { date: '2025-05-06', desc: '3x1 km @ 5:00/km (rec. 90")' },
-      { date: '2025-05-08', desc: '6 km facile @ 5:30/km' },
-      { date: '2025-05-10', desc: "15' corsa + allunghi (facoltativo)" },
-      { date: '2025-05-11', desc: 'GARA HM - Obiettivo 1h45' }
-    ];
-
-    function findNextSession() {
-      const todayStr = today.toISOString().split('T')[0];
-      const next = allenamenti.find(a => a.date >= todayStr);
-      const el = document.getElementById('next-session');
-      if (next) {
-        const date = new Date(next.date);
-        const formatted = date.toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long' });
-        el.innerHTML = `Prossima uscita: <strong>${formatted}</strong> - ${next.desc}`;
-      } else {
-        el.innerHTML = 'Gara completata! 🎉';
-      }
-    }
-
-    findNextSession();
-  </script>
 </body>
 </html>
